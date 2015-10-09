@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+
   root 'rooms#index'
 
   get 'rooms/:id' => 'rooms#show', as: :rooms
