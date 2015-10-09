@@ -1,0 +1,24 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+
+<%= form_for @user do |f| %>
+  <div class="sign_up_form">
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+
+  <div class="sign_up_form">
+    <%= label_tag :password %>
+    <%= text_field_tag :password %>
+  </div>
+
+  <div class="sign_up_form">
+    <%= label_tag :password_confirmation %>
+    <%= text_field_tag :password_confirmation %>
+  </div>
+
+  <div class="btn">
+    <%= submit_tag "Sign Up" %>
+  </div>
+
+<% end %>

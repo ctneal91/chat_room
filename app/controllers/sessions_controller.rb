@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    @users = User.all
   end
 
   def create
@@ -7,15 +8,9 @@ class SessionsController < ApplicationController
     password = params[:password]
 
     user = User.find_by email: email
-
-
-    if user.try(:authenticate, password)
-      session[:user_id] = user.id 
-      if session[:return_to].present?
-        redirect_to session[:return_to]
-      else
-        redirect_to root_path
-      end
+    if (user.present?) && (user.authenticate(password))
+      session[:user_id] = user.id
+      redirect_to root_path
     else
       flash.now[:alert] = "Something is wrong with your email or password. Try again."
       render :new
