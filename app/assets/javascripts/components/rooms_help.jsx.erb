@@ -8,3 +8,39 @@ var Display1 = React.createClass({
     )
   }
 })
+
+var Display2 = React.createClass({
+
+  getInitialState(){
+    return {
+      room: {
+        name: "...loading...",
+        id: this.props.room.id,
+        comments: []
+      }
+    }
+  },
+
+  fetchComments(){
+    var component = this;
+
+    $.getJSON("/api/rooms/" + this.state.room.id + ".json")
+      .done(function(json){
+          component.setState({room: json.room})
+      })
+  },
+
+  componentDidMount(){
+    this.fetchComments()
+  },
+
+  render: function(){
+    return <div>
+      ({this.state.room.comments.length})
+      <div className="comments">
+
+      </div>
+    </div>
+  },
+
+})
