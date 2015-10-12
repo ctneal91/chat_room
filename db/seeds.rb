@@ -8,7 +8,11 @@
 
 brian = User.new
 brian.email = "dorton@tiy.com"
-brian.password_digest = '123456789'
+brian.password = '123456789'
+brian.save
+
+caroline = User.create! email: "cdevine@tiy.com", password: "12345678"
+neal = User.create! email: "neal@tiy.com", password: "12345678"
 
 brian.save
 
@@ -31,3 +35,7 @@ owls = Room.new
 owls.title = "1912 Society"
 owls.description = "Join our parliament."
 owls.save
+
+Comment.create! room: tiy, user: neal, entry: "I love coding!"
+Comment.create! room: tiy, user: caroline, entry: "Rails Girls rock on."
+Comment.create! room: tiy, user: brian, entry: "Ruby is obviously the best language to learn first."
