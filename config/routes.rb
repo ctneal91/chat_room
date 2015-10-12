@@ -15,8 +15,13 @@ Rails.application.routes.draw do
   get '/users/new' => 'users#new', as: :sign_up
   post '/users' => 'users#create', as: :users
 
-  get 'rooms/:id/add_comment' => 'comments#new', as: :new_comment
-  post 'rooms/:id/comments' => 'comments#create', as: :comments
+  namespace :api do
+    get 'rooms/:id' => 'rooms#show'
+    post 'rooms/:id/comments' => 'comments#create'
+  end
+  #
+  # get 'rooms/:id/add_comment' => 'comments#new', as: :new_comment
+  # post 'rooms/:id/comments' => 'comments#create', as: :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
