@@ -1,7 +1,8 @@
 <h1>Rooms#show</h1>
 <p>Find me in app/views/rooms/show.html.erb</p>
 
+<%= link_to 'Add new comment', new_comment_path %>
 <h2><%= @room.title %> </h2>
 <h5><%= @room.description %></h5>
 
-<%= react_component "Display1" %> 
+<%= react_component "Display1" %>

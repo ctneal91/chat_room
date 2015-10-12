@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   post '/sign_out' => 'sessions#delete', as: :sign_out
 
   get '/users/new' => 'users#new', as: :sign_up
-  post '/users/new' => 'users#create', as: :users
+  post '/users' => 'users#create', as: :users
+
+  get 'rooms/:id/add_comment' => 'comments#new', as: :new_comment
+  post 'rooms/:id/comments' => 'comments#create', as: :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

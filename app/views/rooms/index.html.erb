@@ -4,7 +4,7 @@
 <button type="button" name="button"><%= link_to 'Add New Room', new_room_path %></button>
 <% @rooms.each do |room| %>
   <div class="rooms">
-    <h2><%= link_to "#{room.title}", rooms_path(id: room.id) %></h2>
+    <h2><%= link_to "#{room.title}", room_path(id: room.id) %></h2>
     <p><%= room.description %></p>
   </div>
 <% end %>
