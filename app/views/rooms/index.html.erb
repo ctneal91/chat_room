@@ -1,6 +1,7 @@
 <h1>Rooms</h1>
 <p>the world's best chatroom hub.</p>
 
+<button type="button" name="button"><%= link_to 'Add New Room', new_room_path %></button>
 <% @rooms.each do |room| %>
   <div class="rooms">
     <h2><%= link_to "#{room.title}", rooms_path(id: room.id) %></h2>

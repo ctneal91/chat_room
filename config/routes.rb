@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   root 'rooms#index'
 
-  get 'rooms/:id' => 'rooms#show', as: :rooms
+  get 'rooms/new' => 'rooms#new', as: :new_room
+  get 'rooms/:id' => 'rooms#show', as: :room
+  get 'rooms' => 'rooms#index', as: :rooms
+  post 'rooms' => 'rooms#create'
 
   get '/sign_in' => 'sessions#new', as: :sign_in
   post '/sign_in' => 'sessions#create'

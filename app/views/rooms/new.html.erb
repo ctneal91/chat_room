@@ -1,0 +1,16 @@
+<%= form_for @room do |f| %>
+  <div class="new_room_form">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="new_room_form">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="btn">
+    <%= f.submit "Add Room" %>
+  </div>
+
+<% end %>
