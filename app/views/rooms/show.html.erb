@@ -1,7 +1,4 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
-
-<h2><%= @room.title %> </h2>
-<h5><%= @room.description %></h5>
+<h2 class="room_title"><%= @room.title %> </h2>
+<h5 class="room_description"><%= @room.description %></h5>
 
 <%= react_component "Display2", {room: @room} %>

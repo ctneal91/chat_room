@@ -1,2 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.room_title, .room_description {
+  padding-left: 5px;
+}
+.room_title {
+  background-color: #c0392b;
+  color: #bdc3c7;
+  margin: 0 0;
+}
+
+.room_description {
+  margin: 0 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: lighten(#c0392b, 20%);
+  color: lighten(#bdc3c7, 20%)
+}

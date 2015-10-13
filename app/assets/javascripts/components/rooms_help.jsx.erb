@@ -14,7 +14,7 @@ var Display2 = React.createClass({
   getInitialState(){
     return {
       room: {
-        name: "...loading...",
+        title: "...loading...",
         id: this.props.room.id,
         comments: []
       }
@@ -31,16 +31,24 @@ var Display2 = React.createClass({
   },
 
   componentDidMount(){
-    this.fetchComments()
-    this.commentInterval = this.setInterval(3000)
+    this.fetchComments();
+    this.commentInterval = setInterval(this.fetchComments(3000));
+  },
+
+  componentWillUnmount(){
+    clearInterval(commentInterval)
   },
 
   render: function(){
     return <div>
       ({this.state.room.comments.length})
+      Hello
       <div className="comments">
-
+        {this.state.room.comments.map(function(comment){
+          return <Comment comment={comment}></Comment>
+        })}
       </div>
+      <CommentForm room={this.state.room}></CommentForm>
     </div>
   },
 

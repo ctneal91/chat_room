@@ -1,10 +1,11 @@
 var Comment = React.createClass({
   render: function(){
-    return
+    return(
       <div classname="comment">
         {this.props.comment.entry}
         <p></p>
         <cite>Entered by {this.props.comment.user.email}</cite>
       </div>
+    )
   }
 })
