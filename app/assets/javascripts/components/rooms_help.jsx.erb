@@ -32,6 +32,7 @@ var Display2 = React.createClass({
 
   componentDidMount(){
     this.fetchComments()
+    this.commentInterval = this.setInterval(3000)
   },
 
   render: function(){

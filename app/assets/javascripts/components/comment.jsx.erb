@@ -1,0 +1,10 @@
+var Comment = React.createClass({
+  render: function(){
+    return
+      <div classname="comment">
+        {this.props.comment.body}
+        <p></p>
+        <cite>Entered by {this.props.comment.user.email}</cite>
+      </div>
+  }
+})
